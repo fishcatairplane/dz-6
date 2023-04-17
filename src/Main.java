@@ -5,7 +5,6 @@ public class Main {
         System.out.println("Sum of even numbers: " + sums[0]);
         System.out.println("Sum of odd numbers: " + sums[1]);
     }
-
     public static int[] sumOfEvenAndOddNumbers(int[] arr) {
         int sumOfEven = 0;
         int sumOfOdd = 0;
