@@ -1,21 +1,29 @@
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {8, 2, 3, 4, 5, 6, 7};
-        int[] sums = sumOfEvenAndOddNumbers(arr);
-        System.out.println("Sum of even numbers: " + sums[0]);
-        System.out.println("Sum of odd numbers: " + sums[1]);
+        String str = "Hanna1994";
+        printUniqueChars(str);
     }
-    public static int[] sumOfEvenAndOddNumbers(int[] arr) {
-        int sumOfEven = 0;
-        int sumOfOdd = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                sumOfEven += arr[i];
-            } else {
-                sumOfOdd += arr[i];
-            }
+
+    public static void printUniqueChars(String str) {
+        Set<Character> uniqueCharsLinked = new LinkedHashSet<>();
+        for (int i = 0; i < str.length(); i++) {
+            uniqueCharsLinked.add(str.charAt(i));
         }
-        return new int[]{sumOfEven, sumOfOdd};
+        for (char ch : uniqueCharsLinked) {
+            System.out.print(ch);
+        }
+        System.out.println();
+
+        // The order of characters is preserved by using LinkedHashSet
+        Set<Character> uniqueCharsHash = new LinkedHashSet<>();
+        for (int i = 0; i < str.length(); i++) {
+            uniqueCharsHash.add(str.charAt(i));
+        }
+        for (char ch : uniqueCharsHash) {
+            System.out.println(ch);
+        }
     }
 }
-
